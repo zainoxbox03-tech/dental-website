@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Login — Radiant Smiles</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #7DAA92 0%, #6a9982 100%);
+    }
+    .login-container {
+      width: min(420px, calc(100% - 32px));
+    }
+    .login-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: 0 20px 50px rgba(34, 40, 49, 0.15);
+    }
+    .login-card h1 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    .login-card p {
+      margin: 0 0 32px;
+      text-align: center;
+      color: #586173;
+      font-size: 0.95rem;
+    }
+    .login-form {
+      display: grid;
+      gap: 16px;
+    }
+    .form-row {
+      display: grid;
+      gap: 8px;
+    }
+    .login-form button {
+      margin-top: 8px;
+      padding: 14px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .message {
+      padding: 12px 14px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+    .message.error {
+      background: #fde8e8;
+      color: #a12d2d;
+    }
+    .message.info {
+      background: #eef6ff;
+      color: #464feb;
+    }
+    .footer-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    .footer-link a {
+      color: #464feb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h1>Radiant Smiles Staff</h1>
+      <p>Secure login for dental practice staff</p>
+      
+      <div id="loginMessage" class="message" style="display: none;"></div>
+      
+      <form id="loginForm" class="login-form">
+        <div class="form-row">
+          <label for="staffUsername">Username</label>
+          <input type="text" id="staffUsername" name="staffUsername" required />
+        </div>
+        <div class="form-row">
+          <label for="staffPassword">Password</label>
+          <input type="password" id="staffPassword" name="staffPassword" required />
+        </div>
+        <button class="btn btn-secondary" type="submit">Sign In</button>
+      </form>
+      
+      <div class="footer-link">
+        <a href="index.html">← Back to Patient Portal</a>
+      </div>
+      
+      <div class="message info" style="margin-top: 24px; display: block;">
+        <strong>Demo Credentials:</strong><br>
+        Username: <code>staff</code><br>
+        Password: <code>dentist123</code>
+      </div>
+    </div>
+  </div>
+
+  <script src="api-config.js"></script>
+  <script src="staff-auth.js"></script>
+</body>
+</html>

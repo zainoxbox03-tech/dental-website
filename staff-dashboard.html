@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff Dashboard — Radiant Smiles</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .staff-header {
+      background: linear-gradient(135deg, #7DAA92 0%, #6a9982 100%);
+      color: white;
+      padding: 20px 0;
+    }
+    .staff-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .staff-header .brand {
+      color: white;
+    }
+    .staff-header .user-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logout-btn {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .logout-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .staff-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #e1e5ee;
+      margin: 24px 0;
+    }
+    .staff-tabs button {
+      padding: 12px 20px;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      font-weight: 600;
+      color: #586173;
+      transition: all 0.3s;
+    }
+    .staff-tabs button.active {
+      border-bottom-color: #287ab0;
+      color: #287ab0;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .audit-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .audit-table th,
+    .audit-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e1e5ee;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .audit-table th {
+      background: #f2f5fb;
+      font-weight: 700;
+      color: #586173;
+    }
+    .audit-table tr:hover {
+      background: #fbfcff;
+    }
+  </style>
+</head>
+<body>
+  <header class="staff-header">
+    <div class="container">
+      <div class="brand">Radiant Smiles — Staff Dashboard</div>
+      <div class="user-info">
+        <span id="staffUsername" style="font-weight: 600;"></span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="staff-tabs">
+        <button class="tab-btn active" onclick="switchTab('appointments')">Appointments</button>
+        <button class="tab-btn" onclick="switchTab('patients')">Patients</button>
+        <button class="tab-btn" onclick="switchTab('analytics')">Analytics</button>
+        <button class="tab-btn" onclick="switchTab('audit')">Audit Log</button>
+      </div>
+
+      <div id="appointments" class="tab-content active">
+        <h2>Appointment Management</h2>
+        <div class="table-responsive">
+          <table class="report-table" id="appointmentsTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Patient</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="appointmentsMessage" class="message" style="margin-top: 16px;"></div>
+      </div>
+
+      <div id="patients" class="tab-content">
+        <h2>Registered Patients</h2>
+        <div class="table-responsive">
+          <table class="report-table" id="patientsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Registered</th>
+                <th>Total Appointments</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div id="patientsMessage" class="message" style="margin-top: 16px;"></div>
+      </div>
+
+      <div id="analytics" class="tab-content">
+        <h2>Analytics & Reports</h2>
+        <div class="summary-cards" id="analyticsCards"></div>
+        
+        <h3 style="margin-top: 32px;">Appointments by Service</h3>
+        <div id="serviceChart" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"></div>
+        
+        <h3 style="margin-top: 32px;">Upcoming Week</h3>
+        <div class="table-responsive">
+          <table class="report-table" id="upcomingTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Patient</th>
+                <th>Service</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="audit" class="tab-content">
+        <h2>Audit Log</h2>
+        <p style="color: #586173; margin-bottom: 20px;">System activity and staff actions</p>
+        <div class="table-responsive">
+          <table class="audit-table" id="auditTable">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Action</th>
+                <th>Details</th>
+                <th>Staff Member</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="api-config.js"></script>
+  <script src="staff-auth.js"></script>
+  <script src="staff-dashboard.js"></script>
+</body>
+</html>

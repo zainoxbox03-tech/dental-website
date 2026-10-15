@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: radiant-smiles-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm run init-db && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        value: https://cosmic-banoffee-6c5d4d.netlify.app
+      - key: DATABASE_URL
+        fromDatabase:
+          name: radiant-smiles-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: INITIAL_STAFF_USERNAME
+        value: staff
+      - key: INITIAL_STAFF_PASSWORD
+        generateValue: true
+      - key: INITIAL_STAFF_NAME
+        value: Site Administrator
+      - key: INITIAL_STAFF_ROLE
+        value: admin
+
+databases:
+  - name: radiant-smiles-db
+    plan: free
+    databaseName: dental_practice
+    user: radiant_smiles

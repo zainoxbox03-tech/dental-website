@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Appointment — BrightSmile Dental</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a class="brand" href="index.html">Radiant Smiles</a>
+        <p class="tagline">Modern care, friendly smiles, easy online booking.</p>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="staff-login.html" style="color: #287ab0; font-weight: 700;">Staff Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section portal-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Book Your Appointment</h2>
+          <p>Select your preferred date and time for your visit.</p>
+        </div>
+
+        <div class="panel" style="max-width: 500px; margin: 0 auto;">
+          <form id="bookingForm" class="form-card">
+            <div class="form-row">
+              <label for="patientEmail">Your Email</label>
+              <input type="email" id="patientEmail" name="patientEmail" required />
+            </div>
+            <div class="form-row">
+              <label for="appointmentDate">Appointment Date</label>
+              <input type="date" id="appointmentDate" name="appointmentDate" required />
+            </div>
+            <div class="form-row">
+              <label for="appointmentTime">Appointment Time</label>
+              <select id="appointmentTime" name="appointmentTime" required>
+                <option value="">Select a time</option>
+                <option value="08:00">8:00 AM</option>
+                <option value="08:30">8:30 AM</option>
+                <option value="09:00">9:00 AM</option>
+                <option value="09:30">9:30 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="10:30">10:30 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="11:30">11:30 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="12:30">12:30 PM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="13:30">1:30 PM</option>
+                <option value="14:00">2:00 PM</option>
+                <option value="14:30">2:30 PM</option>
+                <option value="15:00">3:00 PM</option>
+                <option value="15:30">3:30 PM</option>
+                <option value="16:00">4:00 PM</option>
+                <option value="16:30">4:30 PM</option>
+                <option value="17:00">5:00 PM</option>
+                <option value="17:30">5:30 PM</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="serviceType">Service Type</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Select a service</option>
+                <option value="Checkup">Routine Checkup</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Cosmetic">Cosmetic Care</option>
+                <option value="Emergency">Emergency</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="notes">Notes (Optional)</label>
+              <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Book Appointment</button>
+            <div id="bookingMessage" class="message"></div>
+          </form>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+          <p>Want to register as a new patient? <a href="index.html">Go back to registration</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Radiant Smiles. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="api-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

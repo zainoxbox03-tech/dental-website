@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radiant Smiles Dental Practice</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <a class="brand" href="#home">Radiant Smiles</a>
+        <p class="tagline">Modern care, friendly smiles, easy online booking.</p>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portal">Book Appointment</a>
+        <a href="#contact">Contact</a>
+        <a href="staff-login.html" style="color: #464feb; font-weight: 700;">Staff Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Dental care made simple and convenient.</h1>
+          <p>Welcome to Radiant Smiles. Register online, book appointments, and track patient bookings with reports designed for smooth practice management.</p>
+          <a href="#portal" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="hero-card">
+          <div class="card">
+            <h2>Book an appointment</h2>
+            <p>Fast, secure patient registration and appointment management for your practice.</p>
+            <ul>
+              <li>Responsive design for desktop and mobile</li>
+              <li>Patient registration</li>
+              <li>Appointment booking and report view</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Quality preventive and restorative dentistry in a calm, modern environment.</p>
+      </div>
+      <div class="cards-grid">
+        <article class="service-card">
+          <h3>Routine Checkups</h3>
+          <p>Regular exams and cleanings to keep your smile healthy.</p>
+        </article>
+        <article class="service-card">
+          <h3>Cosmetic Care</h3>
+          <p>Whitening, veneers, and smile enhancement services available.</p>
+        </article>
+        <article class="service-card">
+          <h3>Emergency Appointments</h3>
+          <p>Fast scheduling when you need urgent dental attention.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portal" class="section portal-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Register as a New Patient</h2>
+          <p>Complete your registration and we'll get you booked for your appointment.</p>
+        </div>
+        <div class="panel" style="max-width: 500px; margin: 0 auto;">
+          <form id="registerForm" class="form-card">
+            <div class="form-row">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="form-row">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Register and Book Appointment</button>
+            <div id="registerMessage" class="message"></div>
+          </form>
+          
+          <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e1e5ee;">
+            <p style="color: #586173; margin-bottom: 12px;">Already a patient?</p>
+            <a href="booking.html" class="btn btn-secondary" style="display: inline-block;">Book Another Appointment</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact Radiant Smiles</h2>
+          <p>We are ready to help patients with care, new appointments, and follow-up visits.</p>
+          <ul class="contact-list">
+            <li><strong>Address:</strong> 147 Kloof Street, Camps Bay, Cape Town, South Africa</li>
+            <li><strong>Phone:</strong> +27 21 438 5000</li>
+            <li><strong>Email:</strong> hello@radiantsmiles.co.za</li>
+          </ul>
+        </div>
+        <div class="contact-box">
+          <h3>Practice Hours</h3>
+          <p>Mon–Fri: 8:30 AM – 5:30 PM</p>
+          <p>Saturday: 9:00 AM – 1:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Radiant Smiles — responsive patient registration and booking</p>
+      <p>Data stored locally in the browser for demo use.</p>
+    </div>
+  </footer>
+
+  <script src="api-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
